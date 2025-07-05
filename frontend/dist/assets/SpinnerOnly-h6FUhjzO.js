@@ -1,0 +1,1 @@
+import{j as n}from"./index-DAiR3oa6.js";function e(){return n.jsx("div",{className:"spinner-container",children:n.jsx("div",{className:"spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full",role:"status",children:n.jsx("span",{className:"visually-hidden"})})})}export{e as S};

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'MyCustomFont'; /* Change this to the name you want to use */
+    src: url('./ZenOldMincho-SemiBold.ttf') format('truetype'); /* Change to the correct path */
+    font-weight: normal; /* Change to 'bold' if using bold weight */
+    font-style: normal; /* Change to 'italic' if using italic style */
+  }
+  

@@ -1,0 +1,35 @@
+/* Spinner.css */
+.spinner-overlay {
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: rgba(0, 0, 0, 0.6); /* Optional background overlay with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's on top of other content */
+  }
+  
+  .spinner-border {
+    border-top-color: transparent;
+    border-right-color: #3498db;
+    border-bottom-color: transparent;
+    border-left-color: #3498db;
+    border-width: 4px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
