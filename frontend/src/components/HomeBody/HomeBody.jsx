@@ -331,7 +331,7 @@ function HomeBody() {
           </div> */}
 
         {/* Card 4 - Yesterday's Revenue */}
-        <div className="hidden bg-[#00144c] p-6 rounded-xl flex-col justify-between relative overflow-hidden lg:hidden xl:hidden sm:flex">
+        <div className="hidden bg-[#2A2A2A] p-6 rounded-xl flex-col justify-between relative overflow-hidden lg:hidden xl:hidden sm:flex">
           {transitions(
             (styles, item) =>
               item && (
@@ -377,11 +377,11 @@ function HomeBody() {
         {/* On small screen end */}
       </div>
 
-      <div className="bg-[#00144c] p-6 rounded-xl flex flex-col justify-between relative overflow-hidden">
+      <div className="bg-[#2A2A2A] p-6 rounded-xl flex flex-col justify-between relative overflow-hidden">
         <h2 className="text-lg text-[#ffeda5] mb-4">Top Sold Items</h2>
         {data.topSoldItems.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-[#00144c] text-white">
+            <table className="min-w-full bg-[#2A2A2A] text-white">
               <thead>
                 <tr className="border-b border-[#ffeda5]">
                   <th className="px-4 py-2 text-left">#</th>
@@ -416,7 +416,7 @@ function HomeBody() {
             View All
           </button>
         </div>
-        <div className="bg-[#00144c] p-6 rounded-xl">
+        <div className="bg-[#2A2A2A] p-6 rounded-xl">
           <table className="w-full text-left">
             <thead>
               <tr>

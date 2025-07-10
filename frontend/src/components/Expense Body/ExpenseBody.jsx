@@ -311,7 +311,7 @@ const handleUpdate = async (entry) => {
 
 
   return (
-    <div className="min-h-screen bg-[#23346c] p-4 lg:p-10 text-gray-100 relative">
+    <div className="min-h-screen bg-[#111111] p-4 lg:p-10 text-gray-100 relative">
       <main className="mt-8 p-2">
         <ExpenseChart
           expenseHistoryData={expenseHistoryData}
@@ -320,7 +320,7 @@ const handleUpdate = async (entry) => {
           setPdfModalOpen={setPdfModalOpen}
         />
 
-        <div className="bg-[#00144c] p-4 lg:p-10 rounded-xl">
+        <div className="bg-[#2A2A2A] p-4 lg:p-10 rounded-xl">
           <div className="flex flex-col lg:flex-row justify-between items-center mb-6 space-y-4 lg:space-y-0">
             <h3 className="text-2xl font-bold text-[#ffeda5]">
               Expense History
