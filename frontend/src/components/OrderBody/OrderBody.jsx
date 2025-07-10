@@ -15,9 +15,9 @@ import IncomeChart from "../Income Chart/IncomeChart";
 import PDFDownloadModal from "../PDFDownloadModal/PDFDownloadModal";
 import SpinnerOnly from "../spinnerOnly/SpinnerOnly";
 import AddOrder from "../Add Order/AddOrder";
-import logo from "../../assets/logoPDF.png";
+import logo from "../../assets/logo.png";
 import ViewOrder from "../View Order/ViewOrder";
-import QR from "../../assets/qr.jpg";
+// import QR from "../../assets/qr.jpg";
 import EditOrder from "../EditOrder/EditOrder";
 
 const OrderBody = () => {
@@ -842,7 +842,7 @@ const OrderBody = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#23346c] p-4 lg:p-10 text-gray-100 relative">
+    <div className="min-h-screen bg-[#111111] p-4 lg:p-10 text-gray-100 relative">
       <main className="mt-8 p-2">
         <IncomeChart
           incomeHistoryData={incomeHistoryData}
@@ -852,7 +852,7 @@ const OrderBody = () => {
         />
 
         {/* Income History Table */}
-        <div className="bg-[#00144c] p-6 lg:p-10 rounded-lg">
+        <div className="bg-[#2A2A2A] p-6 lg:p-10 rounded-lg">
           <div className="flex flex-col lg:flex-row justify-between items-center mb-6">
             <h3 className="text-xl lg:text-2xl font-bold text-[#ffeda5]">
               Order History

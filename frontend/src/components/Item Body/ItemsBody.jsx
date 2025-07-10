@@ -119,10 +119,10 @@ const ItemsBody = () => {
 
   return (
     <>
-      <div className="bg-[#23346c] min-h-screen p-10">
+      <div className="bg-[#111111] min-h-screen p-10">
         <div className="container p-6 mx-auto">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-3xl font-bold text-teal-400">Items</h1>
+            <h1 className="text-3xl font-bold text-[#aea6a6]">Items</h1>
 
             <div className="flex items-center space-x-4">
               <div className="bg-[#00BDD6] bg-opacity-10 px-2 border border-[#00BDD6] rounded-lg">
@@ -138,7 +138,7 @@ const ItemsBody = () => {
               </div>
 
               <button
-                className="flex flex-row bg-[#00A1B7] text-white font-semibold gap-1 px-4 py-2 rounded-md"
+                className="flex flex-row bg-[#2A2A2A] text-white font-semibold gap-1 px-4 py-2 rounded-md"
                 onClick={() => setShowAddItem(true)}
               >
                 {/* <img src={addCustomerIcon} alt="" /> */}

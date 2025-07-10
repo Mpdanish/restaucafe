@@ -171,7 +171,7 @@ function IncomeChart({
   };
 
   return (
-    <div className="bg-[#00144c] p-4 lg:p-8 rounded-xl flex flex-row justify-between items-center mb-8">
+    <div className="bg-[#2A2A2A] p-4 lg:p-8 rounded-xl flex flex-row justify-between items-center mb-8">
       <div className="text-left space-y-3 w-full lg:w-1/3 mb-6 lg:mb-0">
         <h2 className="text-lg lg:text-4xl font-bold text-[#ffeda5]">
           Total income
@@ -224,7 +224,7 @@ function IncomeChart({
           <div className="flex justify-end">
             <button
               onClick={() => setAddOrderModal(true)}
-              className="cursor-pointer border border-[#ffeda5] bg-[#23346c] text-[#ffeda5] font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-[#00144c] hover:bg-opacity-30 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2"
+              className="cursor-pointer border border-[#ffeda5] bg-[#111111] text-[#ffeda5] font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-[#2A2A2A] hover:bg-opacity-30 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2"
             >
               Add Order +
             </button>

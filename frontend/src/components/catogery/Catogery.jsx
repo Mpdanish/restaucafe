@@ -145,11 +145,11 @@ const handleUpdate = async (entry) => {
   return (
     <>
       {addCategory && <AddCategory setAddCategoryModal={setAddCategory} />}
-      <div className="min-h-screen bg-[#23346c] p-10 text-gray-100 relative">
+      <div className="min-h-screen bg-[#111111] p-10 text-gray-100 relative">
         <div className="flex justify-end gap-4 items-center mb-8">
           <button
             onClick={() => setAddCategory(true)}
-            className="bg-blue-500 px-4 py-2 rounded-md text-white hover:bg-blue-700"
+            className="bg-[#2A2A2A] px-4 py-2 rounded-md text-white hover:bg-[#111111]"
           >
             Add Category
           </button>
