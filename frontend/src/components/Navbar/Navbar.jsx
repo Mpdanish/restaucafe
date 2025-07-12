@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div className="flex pl-10 items-center">
-            <img src={Logo} alt="Logo" className="h-12 w-28" />
+            <img src={Logo} alt="Logo" className="h-[100%] w-[15%]" />
           </div>
 
           {/* Desktop Navigation Links */}
