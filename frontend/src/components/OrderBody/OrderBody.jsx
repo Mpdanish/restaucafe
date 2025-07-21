@@ -263,25 +263,25 @@ const OrderBody = () => {
     doc.setFontSize(9);
     doc.text("RECEIPT OF SALE", 23, 5);
     doc.line(22.9, 6, 50.9, 6);
-    doc.addImage(logo, "PNG", 18, 6.5, 35, 20);
-    doc.text("Puthur Bypass Road, Kottakkal - 676503", 9, 27);
-    doc.text("+91 7994 568 370", 23, 32);
+    doc.addImage(logo, "PNG", 20, 7, 35, 30);
+    doc.text("Kooriyad, Vengara, Malappuram", 14, 40);
+    doc.text("+91 8281 186 057", 23, 45);
     doc.setLineDash([1, 1], 0);
-    doc.line(5, 35, 70, 35);
+    doc.line(5, 48, 70, 48);
     doc.setLineDash([]);
     doc.setFontSize(8);
-    doc.text("Bill No:", 5, 40);
-    doc.text(order.referenceNumber, 5, 44);
-    doc.text("Date : ", 45, 40);
-    doc.text("Time : ", 45, 44);
-    doc.text(formattedOrderDate, 53, 40);
-    doc.text(formattedPrintTime, 53, 44);
+    doc.text("Bill No:", 5, 55);
+    doc.text(order.referenceNumber, 5, 59);
+    doc.text("Date : ", 45, 55);
+    doc.text("Time : ", 45, 59);
+    doc.text(formattedOrderDate, 53, 55);
+    doc.text(formattedPrintTime, 53, 59);
     doc.setFontSize(8);
     doc.setLineDash([1, 1], 0);
-    doc.line(5, 47, 70, 47);
+    doc.line(5, 62, 70, 62);
     doc.setLineDash([]);
 
-    let startY = 51; // Adjust starting Y position
+    let startY = 66; // Adjust starting Y position
 
     // Table headers
     doc.setFontSize(9);
@@ -332,15 +332,15 @@ const OrderBody = () => {
     doc.setFontSize(14);
     doc.setFont("Helvetica", "bold");
 
-    doc.text(`Total Amount : ${totalAmount.toFixed(2)}`, 13, totalY + 11); // Total Amount label
+    doc.text(`Total Amount : ${totalAmount.toFixed(2)}`, 11, totalY + 11); // Total Amount label
 
     // Adjust footer position dynamically
     const footerY = totalY + 15;
-    doc.setFontSize(10);
-    doc.text("Scan and Pay here...", 20, footerY + 5); // Add a little space after totals for footer
-    doc.addImage(QR, "PNG", 14, footerY + 6, 50, 50); // QR code positioning
+    // doc.setFontSize(10);
+    // doc.text("Scan and Pay here...", 20, footerY + 5); // Add a little space after totals for footer
+    // doc.addImage(QR, "PNG", 14, footerY + 6, 50, 50); // QR code positioning
     doc.setFont("normal");
-    doc.text("Thank you!... Visit again...", 19, footerY + 65);
+    doc.text("Thank you!... Visit again...", 10, footerY + 5);
 
     const pdfOutput = doc.output("blob");
     const pdfUrl = URL.createObjectURL(pdfOutput);
