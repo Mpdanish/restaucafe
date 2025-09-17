@@ -991,7 +991,7 @@ const OrderBody = () => {
         />
       )}
       {addOrderModal && <AddOrder setAddOrderModal={setAddOrderModal} />}
-      {editOrderModal && <EditOrder setEditOrderModal={setEditOrderModal} existingOrder={editOrderData} />}
+      {editOrderModal && <EditOrder setEditOrderModal={setEditOrderModal} existingOrder={editOrderData} isUpdated={isUpdated} setIsUpdated={setIsUpdated} />}
     </div>
   );
 };
