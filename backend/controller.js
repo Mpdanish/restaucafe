@@ -3,6 +3,7 @@ import CategoryDb from "./model/CategoryDb.js"
 import ExpenseDb from "./model/ExpenseDb.js"
 import itemDb from "./model/ItemsDb.js"
 import orderDb from "./model/OrderDb.js"
+import mongoose from "mongoose"
 
 
 
@@ -312,6 +313,87 @@ async function getLatestIncome(req, res) {
     }
 }
 
+
+async function updateOrder(req, res) {
+    try {
+        const id = req.params?.id || req.body?.id || req.query?.id;
+        const { date, totalAmount, orderDetails } = req.body;
+        console.log(req.body,'req.body');
+        
+
+        if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: true, message: 'Invalid ID' });
+        }
+
+        const updateDocument = {};
+        if (typeof date !== 'undefined') {
+            const parsedDate = new Date(date);
+            if (!isNaN(parsedDate)) {
+                updateDocument.Date = parsedDate;
+            }
+        }
+        if (typeof totalAmount !== 'undefined') {
+            const amount = Number(totalAmount);
+            if (!Number.isNaN(amount)) {
+                updateDocument.totalAmount = amount;
+            }
+        }
+        if (typeof orderDetails !== 'undefined') {
+            // Normalize quantities and totals to numbers
+            const normalizedDetails = Array.isArray(orderDetails)
+                ? orderDetails.map((d) => ({
+                    ...d,
+                    quantity: Number(d.quantity),
+                    price: Number(d.price),
+                    total: Number(d.total),
+                }))
+                : orderDetails;
+            updateDocument.orderDetails = normalizedDetails;
+        }
+
+        if (Object.keys(updateDocument).length === 0) {
+            return res.status(400).json({ error: true, message: 'No fields to update' });
+        }
+
+        console.log('[updateOrder] id:', id);
+        console.log('[updateOrder] updateDocument keys:', Object.keys(updateDocument));
+
+        const updateResult = await orderDb.updateOne(
+            { _id: id },
+            { $set: updateDocument },
+            { runValidators: true }
+        );
+
+        console.log(updateResult,'updateResult');   
+
+        if (updateResult.matchedCount === 0) {
+            return res.status(404).json({ error: true, message: 'Order not found' });
+        }
+
+        if (updateResult.modifiedCount === 0) {
+            // Fetch current to return state even if no modification detected
+            const current = await orderDb.findById(id);
+            return res.status(200).json({
+                error: false,
+                message: 'No changes applied',
+                data: current
+            });
+        }
+
+        const fresh = await orderDb.findById(id);
+        console.log(fresh,'fresh');
+        
+        res.status(200).json({
+            error: false,
+            message: 'Order updated successfully',
+            data: fresh
+        });
+    } catch (error) {
+        console.error('Error updating Order:', error);
+        res.status(500).json({ error: true, message: 'Internal server error' });
+    }
+}
+
 async function updatePaymentMethod(req, res) {
     try {
         const { referenceNumber, paymentMethod } = req.body
@@ -579,6 +661,7 @@ export default {
     getHomeData,
     getLatestIncome,
     updatePaymentMethod,
+    updateOrder,
     updateItem,
     deleteExpense,
     updateExpense,

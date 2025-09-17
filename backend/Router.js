@@ -25,6 +25,7 @@ router.post("/updateItem",controller.updateItem)
 router.put("/updatepaymentmethod",controller.updatePaymentMethod)
 router.put("/updateExpense",controller.updateExpense)
 router.put("/updateCategory",controller.updateCategory)
+router.put("/updateOrder/:id",controller.updateOrder)
 
 router.delete('/deleteExpense',controller.deleteExpense)
 router.delete('/deleteOrder',controller.deleteOrder)
